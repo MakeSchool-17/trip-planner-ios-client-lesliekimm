@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class AddWaypointViewController: UIViewController {
 
+    @IBOutlet weak var addMap: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

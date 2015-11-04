@@ -19,6 +19,8 @@
 		81FA250B1BE9C3E90046B96D /* AddWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250A1BE9C3E90046B96D /* AddWaypointViewController.swift */; };
 		81FA250D1BE9C3F50046B96D /* SelectedWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250C1BE9C3F50046B96D /* SelectedWaypointViewController.swift */; };
 		81FA250F1BE9C7F30046B96D /* TripNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */; };
+		81FA25111BEA5C330046B96D /* AddWaypointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25101BEA5C330046B96D /* AddWaypointTableViewCell.swift */; };
+		81FA25131BEA5E9D0046B96D /* WaypointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25121BEA5E9D0046B96D /* WaypointTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		81FA250A1BE9C3E90046B96D /* AddWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWaypointViewController.swift; sourceTree = "<group>"; };
 		81FA250C1BE9C3F50046B96D /* SelectedWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedWaypointViewController.swift; sourceTree = "<group>"; };
 		81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripNameTableViewCell.swift; sourceTree = "<group>"; };
+		81FA25101BEA5C330046B96D /* AddWaypointTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWaypointTableViewCell.swift; sourceTree = "<group>"; };
+		81FA25121BEA5E9D0046B96D /* WaypointTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */,
+				81FA25101BEA5C330046B96D /* AddWaypointTableViewCell.swift */,
+				81FA25121BEA5E9D0046B96D /* WaypointTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,9 +192,11 @@
 				81FA250D1BE9C3F50046B96D /* SelectedWaypointViewController.swift in Sources */,
 				81FA25091BE9C3DE0046B96D /* YesWaypointsViewController.swift in Sources */,
 				81FA25051BE9C3C40046B96D /* AddTripViewController.swift in Sources */,
+				81FA25131BEA5E9D0046B96D /* WaypointTableViewCell.swift in Sources */,
 				81FA25031BE9C35C0046B96D /* PlannedTripsViewController.swift in Sources */,
 				81FA250B1BE9C3E90046B96D /* AddWaypointViewController.swift in Sources */,
 				81FA250F1BE9C7F30046B96D /* TripNameTableViewCell.swift in Sources */,
+				81FA25111BEA5C330046B96D /* AddWaypointTableViewCell.swift in Sources */,
 				81FA24EB1BE9BE180046B96D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

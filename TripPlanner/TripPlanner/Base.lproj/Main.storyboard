@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Planned Trips-->
@@ -26,10 +27,10 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMt-hI-KaL" id="SJL-tG-605">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coK-45-mSJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coK-45-mSJ">
                                                     <rect key="frame" x="20" y="12" width="560" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,7 +62,7 @@
                     <navigationItem key="navigationItem" title="Planned Trips" id="r6q-SM-RsU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2s7-sk-SAn">
                             <connections>
-                                <segue destination="jam-Rg-OCR" kind="show" id="yIm-kf-Nl8"/>
+                                <segue destination="pLP-gn-DxD" kind="show" id="5Vc-bs-Yft"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -129,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="450" y="1474"/>
         </scene>
-        <!--Yes Waypoints View Controller-->
+        <!--Your Trip-->
         <scene sceneID="ppx-pc-cPQ">
             <objects>
-                <viewController id="pLP-gn-DxD" customClass="YesWaypointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Your Trip" id="pLP-gn-DxD" customClass="YesWaypointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e3M-ue-cFf"/>
                         <viewControllerLayoutGuide type="bottom" id="fIi-k0-bS0"/>
@@ -140,11 +141,68 @@
                     <view key="view" contentMode="scaleToFill" id="auc-yS-cId">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ga-nn-xt9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rnc-S4-5V8" customClass="WaypointTableViewCell" customModule="TripPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnc-S4-5V8" id="K3O-cB-AK4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waypoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35p-Ri-5DJ">
+                                                    <rect key="frame" x="20" y="11.5" width="560" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="35p-Ri-5DJ" secondAttribute="trailing" constant="20" id="2CB-xT-NP2"/>
+                                                <constraint firstItem="35p-Ri-5DJ" firstAttribute="centerY" secondItem="K3O-cB-AK4" secondAttribute="centerY" id="2yr-rH-XoC"/>
+                                                <constraint firstItem="35p-Ri-5DJ" firstAttribute="leading" secondItem="K3O-cB-AK4" secondAttribute="leading" constant="20" id="LFb-ok-FYa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="waypointLabel" destination="35p-Ri-5DJ" id="T8h-VY-Cha"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1ga-nn-xt9" firstAttribute="width" secondItem="auc-yS-cId" secondAttribute="width" id="1mV-0d-JDn"/>
+                            <constraint firstAttribute="trailing" secondItem="1ga-nn-xt9" secondAttribute="trailing" id="BB7-ju-Lbz"/>
+                            <constraint firstItem="1ga-nn-xt9" firstAttribute="leading" secondItem="auc-yS-cId" secondAttribute="leading" id="LUg-bY-4IH"/>
+                            <constraint firstItem="1ga-nn-xt9" firstAttribute="height" secondItem="auc-yS-cId" secondAttribute="height" id="Rq5-jH-Z1c"/>
+                            <constraint firstItem="1ga-nn-xt9" firstAttribute="top" secondItem="auc-yS-cId" secondAttribute="top" id="TgT-ir-oJJ"/>
+                            <constraint firstAttribute="bottom" secondItem="1ga-nn-xt9" secondAttribute="bottom" id="zx6-c9-v2j"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Your Trip" id="OIO-H0-fGR">
+                        <barButtonItem key="leftBarButtonItem" title="Planned Trips" id="m7I-XC-H65">
+                            <connections>
+                                <segue destination="21l-CL-uZ0" kind="unwind" unwindAction="unwindToSegue:" id="5vI-lc-nUr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Waypoint" id="iHc-im-was">
+                            <connections>
+                                <segue destination="Wdj-xt-GlY" kind="show" id="4Cq-Tg-kGg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Qn-Kd-6dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="21l-CL-uZ0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1169" y="1474"/>
         </scene>
@@ -161,35 +219,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qc7-3B-5Da">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="Q8l-ca-CL1">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k0u-7E-9c2">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k0u-7E-9c2" customClass="AddWaypointTableViewCell" customModule="TripPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k0u-7E-9c2" id="vgL-vz-ZMD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-Xz-tdB">
+                                                    <rect key="frame" x="20" y="11.5" width="560" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Sfn-Xz-tdB" firstAttribute="leading" secondItem="vgL-vz-ZMD" secondAttribute="leading" constant="20" id="CpW-6D-z5Q"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sfn-Xz-tdB" secondAttribute="trailing" constant="20" id="e5E-ui-LKe"/>
+                                                <constraint firstItem="Sfn-Xz-tdB" firstAttribute="centerY" secondItem="vgL-vz-ZMD" secondAttribute="centerY" id="jjq-RX-N2a"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="searchResultLabel" destination="Sfn-Xz-tdB" id="8yT-CT-UQB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-Eu-86I">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <animations/>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qc7-3B-5Da" secondAttribute="bottom" id="AIu-Yy-BJo"/>
+                            <constraint firstAttribute="trailing" secondItem="AyP-Eu-86I" secondAttribute="trailing" id="F7x-GC-mjD"/>
+                            <constraint firstItem="qc7-3B-5Da" firstAttribute="height" secondItem="gsi-kr-x5o" secondAttribute="height" multiplier="0.5" id="JzZ-Ma-PMa"/>
                             <constraint firstItem="qc7-3B-5Da" firstAttribute="leading" secondItem="gsi-kr-x5o" secondAttribute="leading" id="KKu-bE-cmq"/>
+                            <constraint firstItem="QUt-Ij-WTX" firstAttribute="top" secondItem="AyP-Eu-86I" secondAttribute="bottom" id="Qdg-Af-pxR"/>
+                            <constraint firstItem="AyP-Eu-86I" firstAttribute="leading" secondItem="gsi-kr-x5o" secondAttribute="leading" id="bCP-o8-Lnp"/>
                             <constraint firstItem="qc7-3B-5Da" firstAttribute="top" secondItem="gsi-kr-x5o" secondAttribute="top" id="mVc-wV-R3N"/>
+                            <constraint firstItem="AyP-Eu-86I" firstAttribute="top" secondItem="qc7-3B-5Da" secondAttribute="bottom" id="oaI-bs-iFD"/>
                             <constraint firstAttribute="trailing" secondItem="qc7-3B-5Da" secondAttribute="trailing" id="toR-e3-yx0"/>
                         </constraints>
                     </view>
@@ -205,13 +288,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addMap" destination="AyP-Eu-86I" id="Tb6-Kp-1xm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-zO-UmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S4O-fg-g7D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="807" y="2257"/>
         </scene>
-        <!--Selected Waypoint View Controller-->
+        <!--Waypoint Name-->
         <scene sceneID="Ht4-iY-y1u">
             <objects>
                 <viewController id="Wdj-xt-GlY" customClass="SelectedWaypointViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -222,11 +308,45 @@
                     <view key="view" contentMode="scaleToFill" id="204-oF-W2d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vWF-uQ-z8z">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <animations/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waypoint Name Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wo-PV-Tp6">
+                                <rect key="frame" x="40" y="249" width="520" height="41"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vWF-uQ-z8z" secondAttribute="trailing" id="Fl4-i2-ui8"/>
+                            <constraint firstItem="vWF-uQ-z8z" firstAttribute="leading" secondItem="204-oF-W2d" secondAttribute="leading" id="RUU-qc-kWw"/>
+                            <constraint firstItem="vWF-uQ-z8z" firstAttribute="top" secondItem="3wo-PV-Tp6" secondAttribute="bottom" constant="10" id="Rra-wk-CZn"/>
+                            <constraint firstItem="3wo-PV-Tp6" firstAttribute="leading" secondItem="204-oF-W2d" secondAttribute="leading" constant="40" id="ZAB-Do-tcy"/>
+                            <constraint firstItem="vWF-uQ-z8z" firstAttribute="height" secondItem="204-oF-W2d" secondAttribute="height" multiplier="0.5" id="eMH-JQ-YiB"/>
+                            <constraint firstAttribute="trailing" secondItem="3wo-PV-Tp6" secondAttribute="trailing" constant="40" id="sap-Qt-JcB"/>
+                            <constraint firstItem="qt4-aS-ktH" firstAttribute="top" secondItem="vWF-uQ-z8z" secondAttribute="bottom" id="wQR-dt-Q3B"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Waypoint Name" id="QAL-Ty-BYg">
+                        <barButtonItem key="leftBarButtonItem" title="Your Trip" id="JaB-8b-fAM">
+                            <connections>
+                                <segue destination="EaO-Yl-0s6" kind="unwind" identifier="BackToYourTrip" unwindAction="unwindToSegue:" id="Wml-wu-D5b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="waypointMapView" destination="vWF-uQ-z8z" id="lOY-m1-2sO"/>
+                        <outlet property="waypointNameLabel" destination="3wo-PV-Tp6" id="p2S-xK-nOa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHW-wm-Dqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EaO-Yl-0s6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1905" y="1474"/>
         </scene>

@@ -9,7 +9,12 @@
 import UIKit
 
 class YesWaypointsViewController: UIViewController {
-
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        if let identifier = segue.identifier {
+            print("Identifier \(identifier)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

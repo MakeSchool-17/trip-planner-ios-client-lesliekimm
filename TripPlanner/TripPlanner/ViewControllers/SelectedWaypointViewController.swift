@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 class SelectedWaypointViewController: UIViewController {
 
+    @IBOutlet weak var waypointNameLabel: UILabel!
+    @IBOutlet weak var waypointMapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.waypointNameLabel.text = "San Francisco"
         // Do any additional setup after loading the view.
     }
 

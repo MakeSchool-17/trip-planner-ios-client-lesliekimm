@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		81FA24EB1BE9BE180046B96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA24EA1BE9BE180046B96D /* AppDelegate.swift */; };
-		81FA24ED1BE9BE180046B96D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA24EC1BE9BE180046B96D /* ViewController.swift */; };
 		81FA24F01BE9BE180046B96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FA24EE1BE9BE180046B96D /* Main.storyboard */; };
 		81FA24F31BE9BE180046B96D /* TripPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81FA24F11BE9BE180046B96D /* TripPlanner.xcdatamodeld */; };
 		81FA24F51BE9BE180046B96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FA24F41BE9BE180046B96D /* Assets.xcassets */; };
 		81FA24F81BE9BE180046B96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FA24F61BE9BE180046B96D /* LaunchScreen.storyboard */; };
+		81FA25031BE9C35C0046B96D /* PlannedTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25021BE9C35C0046B96D /* PlannedTripsViewController.swift */; };
+		81FA25051BE9C3C40046B96D /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25041BE9C3C40046B96D /* AddTripViewController.swift */; };
+		81FA25071BE9C3D30046B96D /* NoWaypointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25061BE9C3D30046B96D /* NoWaypointsViewController.swift */; };
+		81FA25091BE9C3DE0046B96D /* YesWaypointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA25081BE9C3DE0046B96D /* YesWaypointsViewController.swift */; };
+		81FA250B1BE9C3E90046B96D /* AddWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250A1BE9C3E90046B96D /* AddWaypointViewController.swift */; };
+		81FA250D1BE9C3F50046B96D /* SelectedWaypointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250C1BE9C3F50046B96D /* SelectedWaypointViewController.swift */; };
+		81FA250F1BE9C7F30046B96D /* TripNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		81FA24E71BE9BE180046B96D /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FA24EA1BE9BE180046B96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81FA24EC1BE9BE180046B96D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81FA24EF1BE9BE180046B96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81FA24F21BE9BE180046B96D /* TripPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripPlanner.xcdatamodel; sourceTree = "<group>"; };
 		81FA24F41BE9BE180046B96D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81FA24F71BE9BE180046B96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81FA24F91BE9BE180046B96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81FA25021BE9C35C0046B96D /* PlannedTripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedTripsViewController.swift; sourceTree = "<group>"; };
+		81FA25041BE9C3C40046B96D /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		81FA25061BE9C3D30046B96D /* NoWaypointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoWaypointsViewController.swift; sourceTree = "<group>"; };
+		81FA25081BE9C3DE0046B96D /* YesWaypointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesWaypointsViewController.swift; sourceTree = "<group>"; };
+		81FA250A1BE9C3E90046B96D /* AddWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWaypointViewController.swift; sourceTree = "<group>"; };
+		81FA250C1BE9C3F50046B96D /* SelectedWaypointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedWaypointViewController.swift; sourceTree = "<group>"; };
+		81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripNameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +68,10 @@
 		81FA24E91BE9BE180046B96D /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				81FA24FF1BE9C3440046B96D /* Entities */,
+				81FA25001BE9C3440046B96D /* ViewControllers */,
+				81FA25011BE9C3440046B96D /* Views */,
 				81FA24EA1BE9BE180046B96D /* AppDelegate.swift */,
-				81FA24EC1BE9BE180046B96D /* ViewController.swift */,
 				81FA24EE1BE9BE180046B96D /* Main.storyboard */,
 				81FA24F41BE9BE180046B96D /* Assets.xcassets */,
 				81FA24F61BE9BE180046B96D /* LaunchScreen.storyboard */,
@@ -65,6 +79,34 @@
 				81FA24F11BE9BE180046B96D /* TripPlanner.xcdatamodeld */,
 			);
 			path = TripPlanner;
+			sourceTree = "<group>";
+		};
+		81FA24FF1BE9C3440046B96D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		81FA25001BE9C3440046B96D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81FA25021BE9C35C0046B96D /* PlannedTripsViewController.swift */,
+				81FA25041BE9C3C40046B96D /* AddTripViewController.swift */,
+				81FA25061BE9C3D30046B96D /* NoWaypointsViewController.swift */,
+				81FA25081BE9C3DE0046B96D /* YesWaypointsViewController.swift */,
+				81FA250A1BE9C3E90046B96D /* AddWaypointViewController.swift */,
+				81FA250C1BE9C3F50046B96D /* SelectedWaypointViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		81FA25011BE9C3440046B96D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81FA250E1BE9C7F30046B96D /* TripNameTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81FA24ED1BE9BE180046B96D /* ViewController.swift in Sources */,
+				81FA25071BE9C3D30046B96D /* NoWaypointsViewController.swift in Sources */,
 				81FA24F31BE9BE180046B96D /* TripPlanner.xcdatamodeld in Sources */,
+				81FA250D1BE9C3F50046B96D /* SelectedWaypointViewController.swift in Sources */,
+				81FA25091BE9C3DE0046B96D /* YesWaypointsViewController.swift in Sources */,
+				81FA25051BE9C3C40046B96D /* AddTripViewController.swift in Sources */,
+				81FA25031BE9C35C0046B96D /* PlannedTripsViewController.swift in Sources */,
+				81FA250B1BE9C3E90046B96D /* AddWaypointViewController.swift in Sources */,
+				81FA250F1BE9C7F30046B96D /* TripNameTableViewCell.swift in Sources */,
 				81FA24EB1BE9BE180046B96D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

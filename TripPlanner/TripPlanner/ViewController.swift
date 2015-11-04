@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Adaptive
+//  TripPlanner
 //
-//  Created by Leslie Kim on 10/21/15.
+//  Created by Leslie Kim on 11/3/15.
 //  Copyright © 2015 Leslie Kim. All rights reserved.
 //
 

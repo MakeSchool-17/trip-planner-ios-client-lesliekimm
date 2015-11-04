@@ -10,6 +10,7 @@ import UIKit
 
 class AddTripViewController: UIViewController {
 
+    @IBOutlet weak var inputTripNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 

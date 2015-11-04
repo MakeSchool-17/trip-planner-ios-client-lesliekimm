@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-
 class SelectedWaypointViewController: UIViewController {
 
     @IBOutlet weak var waypointNameLabel: UILabel!

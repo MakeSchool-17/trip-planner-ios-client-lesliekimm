@@ -48,6 +48,10 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IyN-D1-nxd" id="TLj-eX-MoP"/>
+                                    <outlet property="delegate" destination="IyN-D1-nxd" id="D0m-sK-EqC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -62,10 +66,13 @@
                     <navigationItem key="navigationItem" title="Planned Trips" id="r6q-SM-RsU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2s7-sk-SAn">
                             <connections>
-                                <segue destination="pLP-gn-DxD" kind="show" id="5Vc-bs-Yft"/>
+                                <action selector="addTrip:" destination="IyN-D1-nxd" id="JW2-fp-L5r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tripsTableView" destination="y2Z-2G-20y" id="73Z-kb-svH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHd-Df-CuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +155,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rnc-S4-5V8" customClass="WaypointTableViewCell" customModule="TripPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnc-S4-5V8" id="K3O-cB-AK4">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>

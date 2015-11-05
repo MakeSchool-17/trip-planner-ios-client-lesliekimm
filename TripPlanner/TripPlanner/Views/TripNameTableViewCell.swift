@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol PlannedTripsTableViewCellDelegate: class {
+    func cell(cell: TripNameTableViewCell, didSelectFollowUser tripName: String)
+    func cell(cell: TripNameTableViewCell, didSelectUnfollowUser tripName: String)
+}
+
 class TripNameTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {

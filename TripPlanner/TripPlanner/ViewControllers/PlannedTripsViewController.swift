@@ -6,6 +6,10 @@
 //  Copyright © 2015 Leslie Kim. All rights reserved.
 //
 
+// NOTES: http://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
+// for using alerts to save new trip names
+
+
 import UIKit
 
 class PlannedTripsViewController: UIViewController, UITableViewDataSource {

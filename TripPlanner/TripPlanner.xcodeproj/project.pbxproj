@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		815630031BEAD78F002889F3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815630011BEAD78F002889F3 /* Trip.swift */; };
 		815630081BEAD84A002889F3 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815630061BEAD84A002889F3 /* Waypoint.swift */; };
+		8156300D1BEAE06B002889F3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156300C1BEAE06B002889F3 /* CoreDataStack.swift */; };
 		81FA24EB1BE9BE180046B96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA24EA1BE9BE180046B96D /* AppDelegate.swift */; };
 		81FA24F01BE9BE180046B96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FA24EE1BE9BE180046B96D /* Main.storyboard */; };
 		81FA24F31BE9BE180046B96D /* TripPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81FA24F11BE9BE180046B96D /* TripPlanner.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		815630011BEAD78F002889F3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		815630061BEAD84A002889F3 /* Waypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
+		8156300C1BEAE06B002889F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		81FA24E71BE9BE180046B96D /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FA24EA1BE9BE180046B96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81FA24EF1BE9BE180046B96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		81FA24E91BE9BE180046B96D /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				81FA24FF1BE9C3440046B96D /* Entities */,
 				81FA25001BE9C3440046B96D /* ViewControllers */,
 				81FA25011BE9C3440046B96D /* Views */,
 				81FA24EA1BE9BE180046B96D /* AppDelegate.swift */,
@@ -87,15 +88,9 @@
 				81FA24F61BE9BE180046B96D /* LaunchScreen.storyboard */,
 				81FA24F91BE9BE180046B96D /* Info.plist */,
 				81FA24F11BE9BE180046B96D /* TripPlanner.xcdatamodeld */,
+				8156300C1BEAE06B002889F3 /* CoreDataStack.swift */,
 			);
 			path = TripPlanner;
-			sourceTree = "<group>";
-		};
-		81FA24FF1BE9C3440046B96D /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		81FA25001BE9C3440046B96D /* ViewControllers */ = {
@@ -200,6 +195,7 @@
 				81FA25051BE9C3C40046B96D /* AddTripViewController.swift in Sources */,
 				81FA25131BEA5E9D0046B96D /* WaypointTableViewCell.swift in Sources */,
 				815630031BEAD78F002889F3 /* Trip.swift in Sources */,
+				8156300D1BEAE06B002889F3 /* CoreDataStack.swift in Sources */,
 				81FA25031BE9C35C0046B96D /* PlannedTripsViewController.swift in Sources */,
 				81FA250B1BE9C3E90046B96D /* AddWaypointViewController.swift in Sources */,
 				815630081BEAD84A002889F3 /* Waypoint.swift in Sources */,

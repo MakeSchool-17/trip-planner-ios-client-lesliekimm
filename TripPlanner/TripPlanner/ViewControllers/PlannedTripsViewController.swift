@@ -12,15 +12,17 @@
 
 
 import UIKit
+import CoreData
 
 class PlannedTripsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tripsTableView: UITableView!             // code connection for table view
     
-    var trips = [String]()                                      // array of trip names
+    var trips = [Trip]()                                        // declare array of Trips
+    var selectedTrip: Trip?                                     // declare selectedTrip obj
     
     /*
       When the Add Nav Bar Button is selected, an alert will pop up prompting the
-      user to add the name for a new trip, which is stored in a table cell.
+      user to add the name for a new trip, which is stored in the trips array
     */
     @IBAction func addTrip(sender: AnyObject) {
         // Create an alert that prompts user to enter a trip name
@@ -28,29 +30,29 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
                                       message: "Give this new trip a name",
                                       preferredStyle: .Alert)
         
-        //
+        // Save button will append new Trip to trips array and reload the tripsTableView
         let saveAction = UIAlertAction(title: "Save",
                                        style: .Default,
-                                       handler: { (action: UIAlertAction) -> Void in
-                                                    let textField = alert.textFields!.first
-                self.trips.append(textField!.text!)
-                self.tripsTableView.reloadData()
-        })
+                                       handler: {(action: UIAlertAction) -> Void in
+                                                  let textField = alert.textFields!.first
+                                                  let addedTrip = TripManager().addTrip(textField!.text!)
+                                                  self.trips.append(addedTrip)
+                                                  self.tripsTableView.reloadData()
+                                                })
         
-        let cancelAction = UIAlertAction(title: "Cancel",
-            style: .Default) { (action: UIAlertAction) -> Void in
+        // Cancel button will dismiss action sheet
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {(action: UIAlertAction) -> Void in
         }
         
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField) -> Void in
+        // Add a placeholder to the text field
+        alert.addTextFieldWithConfigurationHandler {(textField: UITextField) -> Void in
+                                                     textField.placeholder = "Trip name"
         }
         
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
+        alert.addAction(saveAction)                             // add save button action
+        alert.addAction(cancelAction)                           // add cancel button action
         
-        presentViewController(alert,
-            animated: true,
-            completion: nil)
+        presentViewController(alert, animated: true, completion: nil)
     }
 
     /*
@@ -63,42 +65,80 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    /*
+    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\"Planned Trips\""
-        tripsTableView.registerClass(UITableViewCell.self,
-            forCellReuseIdentifier: "TripCell")
-    }
+        
+        title = "\"Planned Trips\""                             // set title of view controller
+        // Register TableViewCells with identifier "TripCell"
+        tripsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TripCell")
+        
+        // Access managed object context
+        let context: NSManagedObjectContext = ((UIApplication.sharedApplication().delegate as! AppDelegate?)!.myCoreData?.managedObjectContext)!
+        let managedContext = context
+        // Create a new fetch request with the entity description for the entity we are selecting
+        let fetchRequest = NSFetchRequest(entityName: "Trip")
+        var results: [Trip]?                                    // declare an array of Trips
+        
+        do {
+            results = try managedContext.executeFetchRequest(fetchRequest) as? [Trip]
+        }
+        catch let error as NSError {
+            print(error)
+        }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let results = results {
+            self.trips = results                                // set trips array to the results array
+        }
     }
 
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return trips.count
+    
+    /*
+      Returns the number of rows that should be in the TableView
+    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trips.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
-            
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("TripCell")
-            
-            cell!.textLabel!.text = trips[indexPath.row]
-            
-            return cell!
+    /*
+      Sets the textLabel of each TableViewCell to the name of Trip
+    */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TripCell")
+        cell!.textLabel!.text = trips[indexPath.row].name
+        
+        return cell!
+    }
+    
+    /*
+      Set segue for ShowTrip to show the YesWaypointsViewController if there
+      are waypoints for the trip or show the NoWaypointsViewController if there
+      aren't waypoints for the trip
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ShowTrip") {
+            let plannedTripViewController = segue.destinationViewController as! YesWaypointsViewController
+            plannedTripViewController.trip = selectedTrip
+        }
     }
 }
 
-extension PlannedTripsViewController: PlannedTripsTableViewCellDelegate {
-    func cell(cell: TripNameTableViewCell, didSelectFollowUser tripName: String) {
-        
+extension PlannedTripsViewController: UITableViewDelegate {
+    /*
+      
+    */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("selected")
+//        // when note has been selected, we want to assign this note to a var for easy access
+//        selectedTrip = trips[indexPath.row]
+//        
+//        // we will be performing a segue to NoteDisplayViewController later...
+//        self.performSegueWithIdentifier("ShowTrip", sender: self)
     }
-    func cell(cell: TripNameTableViewCell, didSelectUnfollowUser tripName: String) {
-        
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print("done")
     }
 }

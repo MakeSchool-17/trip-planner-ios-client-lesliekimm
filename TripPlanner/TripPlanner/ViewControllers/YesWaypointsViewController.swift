@@ -9,6 +9,8 @@
 import UIKit
 
 class YesWaypointsViewController: UIViewController {
+    var trip: Trip?
+    
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             print("Identifier \(identifier)")

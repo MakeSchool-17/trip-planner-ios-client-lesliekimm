@@ -1,35 +1,38 @@
 //
-//  PlannedTripsViewController.swift
-//  TripPlanner
+// PlannedTripsViewController.swift
+// TripPlanner
 //
-//  Created by Leslie Kim on 11/3/15.
-//  Copyright © 2015 Leslie Kim. All rights reserved.
+// Created by Leslie Kim on 11/3/15.
+// Copyright © 2015 Leslie Kim. All rights reserved.
 //
 
-// NOTES: http://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
-// for using alerts to save new trip names
+// SOURCES:
+// 1) adding new trips to table view using UIAlerts:
+//    http://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
 
 
 import UIKit
 
 class PlannedTripsViewController: UIViewController, UITableViewDataSource {
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        if let identifier = segue.identifier {
-            print("Identifier \(identifier)")
-        }
-    }
+    @IBOutlet weak var tripsTableView: UITableView!             // code connection for table view
     
-    @IBOutlet weak var tripsTableView: UITableView!
+    var trips = [String]()                                      // array of trip names
+    
+    /*
+      When the Add Nav Bar Button is selected, an alert will pop up prompting the
+      user to add the name for a new trip, which is stored in a table cell.
+    */
     @IBAction func addTrip(sender: AnyObject) {
+        // Create an alert that prompts user to enter a trip name
         let alert = UIAlertController(title: "New Trip",
-            message: "Add a new trip",
-            preferredStyle: .Alert)
+                                      message: "Give this new trip a name",
+                                      preferredStyle: .Alert)
         
+        //
         let saveAction = UIAlertAction(title: "Save",
-            style: .Default,
-            handler: { (action:UIAlertAction) -> Void in
-                
-                let textField = alert.textFields!.first
+                                       style: .Default,
+                                       handler: { (action: UIAlertAction) -> Void in
+                                                    let textField = alert.textFields!.first
                 self.trips.append(textField!.text!)
                 self.tripsTableView.reloadData()
         })
@@ -49,8 +52,16 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
             animated: true,
             completion: nil)
     }
-    
-    var trips = [String]()
+
+    /*
+      A ViewController that displays the waypoints for a specific trip will use
+      this segue to return to the PlannedTripsViewController.
+    */
+    @IBAction func backToPlannedTrips(segue: UIStoryboardSegue) {
+        if let identifier = segue.identifier {
+            print("Identifier \(identifier) returning to Planned Trips.")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

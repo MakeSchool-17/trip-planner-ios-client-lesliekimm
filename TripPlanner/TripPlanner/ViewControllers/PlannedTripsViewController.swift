@@ -66,7 +66,7 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
     }
     
     /*
-    
+      Set the title of the View Controller and store all the Trip instances in trips array
     */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,11 +132,11 @@ extension PlannedTripsViewController: UITableViewDelegate {
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected")
-//        // when note has been selected, we want to assign this note to a var for easy access
-//        selectedTrip = trips[indexPath.row]
-//        
-//        // we will be performing a segue to NoteDisplayViewController later...
-//        self.performSegueWithIdentifier("ShowTrip", sender: self)
+        // when note has been selected, we want to assign this note to a var for easy access
+        selectedTrip = trips[indexPath.row]
+        
+        // we will be performing a segue to NoteDisplayViewController later...
+        self.performSegueWithIdentifier("ShowTrip", sender: self)
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         print("done")

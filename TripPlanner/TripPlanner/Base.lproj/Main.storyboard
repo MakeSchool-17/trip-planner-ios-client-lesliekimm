@@ -67,69 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1169" y="757"/>
         </scene>
-        <!--No Waypoints-->
-        <scene sceneID="PJE-5O-KWf">
-            <objects>
-                <viewController title="No Waypoints" id="jam-Rg-OCR" customClass="NoWaypointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AhV-0o-ktx"/>
-                        <viewControllerLayoutGuide type="bottom" id="3az-Cn-Azr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nhV-Z9-jkG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olq-66-hD5">
-                                <rect key="frame" x="30" y="223" width="540" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FiT-uc-N9M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDD-pS-CmZ">
-                                <rect key="frame" x="243" y="281" width="114" height="38"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Get Started!"/>
-                                <connections>
-                                    <segue destination="Zbe-cd-ayK" kind="show" id="s6b-q2-dyv"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Olq-66-hD5" firstAttribute="leading" secondItem="nhV-Z9-jkG" secondAttribute="leading" constant="30" id="2oo-QX-Ckp"/>
-                            <constraint firstItem="rDD-pS-CmZ" firstAttribute="centerY" secondItem="nhV-Z9-jkG" secondAttribute="centerY" id="BEV-oq-4AI"/>
-                            <constraint firstAttribute="trailing" secondItem="Olq-66-hD5" secondAttribute="trailing" constant="30" id="SmM-6F-wBl"/>
-                            <constraint firstItem="rDD-pS-CmZ" firstAttribute="centerX" secondItem="nhV-Z9-jkG" secondAttribute="centerX" id="UV6-Of-56z"/>
-                            <constraint firstItem="rDD-pS-CmZ" firstAttribute="top" secondItem="Olq-66-hD5" secondAttribute="bottom" constant="8" id="aux-ap-AcX"/>
-                            <constraint firstItem="Olq-66-hD5" firstAttribute="centerX" secondItem="nhV-Z9-jkG" secondAttribute="centerX" id="egr-aj-zXd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Trip Name" id="Cyi-QK-3aJ">
-                        <barButtonItem key="leftBarButtonItem" title="Planned Trips" id="K2U-BD-4GA">
-                            <connections>
-                                <segue destination="2SH-w2-aZa" kind="unwind" identifier="BackToTrips" unwindAction="unwindToSegue:" id="qHi-4R-qGz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="infoLabel" destination="Olq-66-hD5" id="tcG-4e-8Kh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OEg-CT-juZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="2SH-w2-aZa" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="450" y="1474"/>
-        </scene>
-        <!--Yes Waypoints-->
+        <!--Waypoints-->
         <scene sceneID="ppx-pc-cPQ">
             <objects>
-                <viewController title="Yes Waypoints" id="pLP-gn-DxD" customClass="YesWaypointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Waypoints" id="pLP-gn-DxD" customClass="WaypointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e3M-ue-cFf"/>
                         <viewControllerLayoutGuide type="bottom" id="fIi-k0-bS0"/>
@@ -143,7 +84,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaypointCell" id="rnc-S4-5V8" customClass="WaypointTableViewCell" customModule="TripPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaypointCell" id="rnc-S4-5V8" customClass="WaypointsTableViewCell" customModule="TripPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnc-S4-5V8" id="K3O-cB-AK4">
@@ -188,7 +129,7 @@
                     <navigationItem key="navigationItem" title="Your Trip" id="OIO-H0-fGR">
                         <barButtonItem key="leftBarButtonItem" title="Planned Trips" id="m7I-XC-H65">
                             <connections>
-                                <segue destination="21l-CL-uZ0" kind="unwind" identifier="BackToTrips2" unwindAction="unwindToSegue:" id="5vI-lc-nUr"/>
+                                <segue destination="21l-CL-uZ0" kind="unwind" identifier="BackToPlannedTrips" unwindAction="backToPlannedTrips:" id="MRe-5Q-kfA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Waypoint" id="iHc-im-was">
@@ -276,7 +217,7 @@
                     <navigationItem key="navigationItem" title="Add Waypoint" id="KvO-lP-BTy">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="IFP-hA-wnN">
                             <connections>
-                                <segue destination="S4O-fg-g7D" kind="unwind" identifier="BackToNo" unwindAction="unwindToSegue:" id="b6T-vJ-Bsz"/>
+                                <segue destination="S4O-fg-g7D" kind="unwind" identifier="BackToWaypoints" unwindAction="unwindToSegue:" id="Y6y-xk-4ch"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Waypoint" id="8Vt-YA-9Eb">
@@ -292,7 +233,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-zO-UmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S4O-fg-g7D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="807" y="2257"/>
+            <point key="canvasLocation" x="1169" y="2251"/>
         </scene>
         <!--Waypoint Name-->
         <scene sceneID="Ht4-iY-y1u">
@@ -365,7 +306,4 @@
             <point key="canvasLocation" x="450" y="757"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5vA-sL-J0W"/>
-    </inferredMetricsTieBreakers>
 </document>

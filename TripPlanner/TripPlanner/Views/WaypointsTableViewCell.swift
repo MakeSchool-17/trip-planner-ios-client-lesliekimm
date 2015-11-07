@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaypointTableViewCell: UITableViewCell {
+class WaypointsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var waypointLabel: UILabel!
     override func awakeFromNib() {

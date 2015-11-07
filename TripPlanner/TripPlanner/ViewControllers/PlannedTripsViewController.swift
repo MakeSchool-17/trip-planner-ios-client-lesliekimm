@@ -66,7 +66,7 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "\"Planned Trips\""                             // set title of view controller
+        title = "Planned Trips"                                 // set title of view controller
         // Register TableViewCells with identifier "TripCell"
         tripsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TripCell")
         
@@ -109,7 +109,7 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
     // aren't waypoints for the trip
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ShowTrip") {
-            let plannedTripViewController = segue.destinationViewController as! YesWaypointsViewController
+            let plannedTripViewController = segue.destinationViewController as! WaypointsViewController
             plannedTripViewController.trip = selectedTrip
         }
     }
@@ -118,10 +118,10 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
 extension PlannedTripsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected")
-        // when note has been selected, we want to assign this note to a var for easy access
+        // When a trip has been selected, assign to selectedTrip
         selectedTrip = trips[indexPath.row]
         
-        // we will be performing a segue to NoteDisplayViewController later...
+        // Perform segue to YesWaypointsViewController
         self.performSegueWithIdentifier("ShowTrip", sender: self)
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

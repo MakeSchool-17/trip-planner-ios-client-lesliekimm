@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YesWaypointsViewController: UIViewController {
+class WaypointsViewController: UIViewController {
     var trip: Trip?
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
@@ -19,6 +19,13 @@ class YesWaypointsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //self.infoLabel.text = "You haven't added any waypoints to your trip!"
+        //self.infoLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        //self.infoLabel.numberOfLines = 0
+        //self.infoLabel.sizeToFit()
+
 
         // Do any additional setup after loading the view.
     }

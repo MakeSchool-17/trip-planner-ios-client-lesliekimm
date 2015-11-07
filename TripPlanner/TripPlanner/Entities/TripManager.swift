@@ -14,7 +14,7 @@ class TripManager: NSObject {
     var myCoreData = (UIApplication.sharedApplication().delegate as! AppDelegate?)!.myCoreData
     
     func addTrip(name: String) -> Trip {
-        let context: NSManagedObjectContext = myCoreData!.managedObjectContext!
+        let context: NSManagedObjectContext = myCoreData!.managedObjectContext
         let trip = Trip(context: context)
 //        let trip: Trip = NSEntityDescription.insertNewObjectForEntityForName("Trip", inManagedObjectContext:context)
         

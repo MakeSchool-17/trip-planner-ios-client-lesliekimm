@@ -20,10 +20,8 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
     var trips = [Trip]()                                        // declare array of Trips
     var selectedTrip: Trip?                                     // declare selectedTrip obj
     
-    /*
-      When the Add Nav Bar Button is selected, an alert will pop up prompting the
-      user to add the name for a new trip, which is stored in the trips array
-    */
+    // When the Add Nav Bar Button is selected, an alert will pop up prompting the
+    // user to add the name for a new trip, which is stored in the trips array
     @IBAction func addTrip(sender: AnyObject) {
         // Create an alert that prompts user to enter a trip name
         let alert = UIAlertController(title: "New Trip",
@@ -55,19 +53,16 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
         presentViewController(alert, animated: true, completion: nil)
     }
 
-    /*
-      A ViewController that displays the waypoints for a specific trip will use
-      this segue to return to the PlannedTripsViewController.
-    */
+    // A ViewController that displays the waypoints for a specific trip will use
+    // this segue to return to the PlannedTripsViewController.
     @IBAction func backToPlannedTrips(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             print("Identifier \(identifier) returning to Planned Trips.")
         }
     }
     
-    /*
-      Set the title of the View Controller and store all the Trip instances in trips array
-    */
+
+    // Set the title of the View Controller and store all the Trip instances in trips array
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,16 +91,12 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
 
     // MARK: UITableViewDataSource
     
-    /*
-      Returns the number of rows that should be in the TableView
-    */
+    // Returns the number of rows that should be in the TableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
     }
     
-    /*
-      Sets the textLabel of each TableViewCell to the name of Trip
-    */
+    // Sets the textLabel of each TableViewCell to the name of Trip
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TripCell")
         cell!.textLabel!.text = trips[indexPath.row].name
@@ -113,11 +104,9 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
         return cell!
     }
     
-    /*
-      Set segue for ShowTrip to show the YesWaypointsViewController if there
-      are waypoints for the trip or show the NoWaypointsViewController if there
-      aren't waypoints for the trip
-    */
+    // Set segue for ShowTrip to show the YesWaypointsViewController if there
+    // are waypoints for the trip or show the NoWaypointsViewController if there
+    // aren't waypoints for the trip
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ShowTrip") {
             let plannedTripViewController = segue.destinationViewController as! YesWaypointsViewController
@@ -127,9 +116,6 @@ class PlannedTripsViewController: UIViewController, UITableViewDataSource {
 }
 
 extension PlannedTripsViewController: UITableViewDelegate {
-    /*
-      
-    */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected")
         // when note has been selected, we want to assign this note to a var for easy access

@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHd-Df-CuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="757"/>
+            <point key="canvasLocation" x="1145" y="757"/>
         </scene>
         <!--Waypoints-->
         <scene sceneID="ppx-pc-cPQ">
@@ -83,36 +83,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaypointCell" id="rnc-S4-5V8" customClass="WaypointsTableViewCell" customModule="TripPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnc-S4-5V8" id="K3O-cB-AK4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="19H-co-l0c">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <prototypes>
+                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaypointCell" id="Tjk-UI-NW2" customClass="WaypointsTableViewCell" customModule="TripPlanner" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waypoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35p-Ri-5DJ">
-                                                    <rect key="frame" x="20" y="11.5" width="560" height="20.5"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tjk-UI-NW2" id="fe9-D2-Dor">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waypoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B00-k1-RaK">
+                                                        <rect key="frame" x="20" y="11.5" width="560" height="20.5"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="B00-k1-RaK" firstAttribute="leading" secondItem="fe9-D2-Dor" secondAttribute="leading" constant="20" id="ZuL-2T-InX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="B00-k1-RaK" secondAttribute="trailing" constant="20" id="eDp-Ea-4ym"/>
+                                                    <constraint firstItem="B00-k1-RaK" firstAttribute="centerY" secondItem="fe9-D2-Dor" secondAttribute="centerY" id="kJj-0Q-Vl1"/>
+                                                </constraints>
+                                            </tableViewCellContentView>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="35p-Ri-5DJ" secondAttribute="trailing" constant="20" id="2CB-xT-NP2"/>
-                                                <constraint firstItem="35p-Ri-5DJ" firstAttribute="centerY" secondItem="K3O-cB-AK4" secondAttribute="centerY" id="2yr-rH-XoC"/>
-                                                <constraint firstItem="35p-Ri-5DJ" firstAttribute="leading" secondItem="K3O-cB-AK4" secondAttribute="leading" constant="20" id="LFb-ok-FYa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="waypointLabel" destination="35p-Ri-5DJ" id="ayu-9k-J7y"/>
-                                            <segue destination="Wdj-xt-GlY" kind="show" identifier="ShowWaypointDetail" id="EbO-As-8ts"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                            <connections>
+                                                <outlet property="waypointLabel" destination="B00-k1-RaK" id="s47-CG-fVV"/>
+                                            </connections>
+                                        </tableViewCell>
+                                    </prototypes>
+                                    <connections>
+                                        <outlet property="dataSource" destination="pLP-gn-DxD" id="9PU-O1-UXP"/>
+                                        <outlet property="delegate" destination="pLP-gn-DxD" id="CT8-wa-NOm"/>
+                                    </connections>
+                                </tableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="pLP-gn-DxD" id="0FR-pW-fYA"/>
+                                    <outlet property="delegate" destination="pLP-gn-DxD" id="wI8-hE-qE9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -138,11 +151,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="waypointsTableView" destination="1ga-nn-xt9" id="ZvD-LK-yz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Qn-Kd-6dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="21l-CL-uZ0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="1474"/>
+            <point key="canvasLocation" x="1841" y="757"/>
         </scene>
         <!--Add Waypoint-->
         <scene sceneID="e09-bZ-jeO">
@@ -233,7 +249,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-zO-UmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S4O-fg-g7D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="2251"/>
+            <point key="canvasLocation" x="1841" y="1485"/>
         </scene>
         <!--Waypoint Name-->
         <scene sceneID="Ht4-iY-y1u">
@@ -286,7 +302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHW-wm-Dqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EaO-Yl-0s6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="1474"/>
+            <point key="canvasLocation" x="2525" y="757"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dn4-PD-Xni">

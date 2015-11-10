@@ -14,6 +14,12 @@ class Waypoint: NSManagedObject {
     @NSManaged var name: String?
     @NSManaged var longitude: String?
     @NSManaged var latitude: String?
+    
+    convenience init(context: NSManagedObjectContext) {
+        let entityDescription = NSEntityDescription.entityForName("Waypoint", inManagedObjectContext:
+            context)!
+        self.init(entity: entityDescription, insertIntoManagedObjectContext: context)
+    }
 // Insert code here to add functionality to your managed object subclass
 
 }
